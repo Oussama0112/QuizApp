@@ -1,0 +1,167 @@
+/* my globale variabels */
+:root {
+  --container-width: 800px;
+  --container-padding: 0.5em 0.7em;
+  --container-margin: 10px auto;
+  --main-clr: rgb(10 84 91);
+  --second-clr: #777;
+  --third-clr: 0, 0, 250;
+  --brdr-thikness: 3px;
+  --bg-clr: #f3f3f3;
+  --container-brdr-radius: 0.5em;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+/* main Css code */
+
+.infoContainer {
+  width: 800px;
+  margin: var(--container-margin);
+  border: var(--brdr-thikness) solid var(--main-clr);
+  font-size: 1.1rem;
+  padding: var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--container-brdr-radius);
+  text-transform: capitalize;
+  background-color: var(--bg-clr);
+}
+.infoContainer .name {
+  color: var(--second-clr);
+}
+.infoContainer .name span {
+  font-weight: bolder;
+  color: var(--main-clr);
+}
+.infoContainer .numberOfQuestion {
+  color: var(--second-clr);
+}
+.infoContainer .numberOfQuestion span {
+  font-weight: bolder;
+  color: var(--main-clr);
+}
+.mainGameContainer {
+  margin: var(--container-margin);
+  width: var(--container-width);
+  padding: var(--container-padding);
+  border: var(--brdr-thikness) solid var(--main-clr);
+  border-radius: var(--container-brdr-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--bg-clr);
+  text-transform: capitalize;
+}
+.mainGameContainer .question {
+  text-align: center;
+  padding: var(--container-padding);
+  background: white;
+  border-radius: var(--container-brdr-radius);
+  border-bottom: 1px solid var(--main-clr);
+}
+.mainGameContainer .QCM {
+  padding: var(--container-padding);
+  border-radius: var(--container-brdr-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--main-clr);
+}
+.QCM .wraper {
+  background: white;
+  padding: var(--container-padding);
+  border-radius: var(--container-brdr-radius);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.QCM .wraper:not(:last-of-type) {
+  border-bottom: 1px solid var(--main-clr);
+}
+
+.QCM input[type="radio"] {
+  width: 15px;
+  height: 15px;
+}
+
+.QCM input[type="radio"]:checked + label {
+  color: rgba(var(--third-clr));
+}
+.mainGameContainer > button {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: var(--container-padding);
+  border: none;
+  font-size: 1.3em;
+  text-transform: capitalize;
+  background: rgb(var(--third-clr));
+  color: white;
+  font-weight: 700;
+  border-radius: var(--container-brdr-radius);
+  cursor: pointer;
+}
+.mainGameContainer > button:hover {
+  background-color: rgba(var(--third-clr), 0.78);
+}
+.display {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--container-padding);
+  border-bottom: 1px solid var(--main-clr);
+  background: white;
+  border-radius: var(--container-brdr-radius);
+  align-items: center;
+}
+.display .bullets {
+  display: flex;
+  gap: 2px;
+}
+.display .bullets span {
+  width: 15px;
+  height: 15px;
+  display: block;
+  background-color: var(--bg-clr);
+  border-radius: 50%;
+  border: 1px solid var(--main-clr);
+}
+.display .bullets span.active {
+  background-color: rgb(var(--third-clr));
+  border: none;
+}
+.display .countDownTimer {
+  font-family: "Times New Roman", Times, serif;
+}
+.result {
+  width: var(--container-width);
+  margin: var(--container-margin);
+  padding: var(--container-padding);
+  background: var(--bg-clr);
+  border: var(--brdr-thikness) solid var(--main-clr);
+  border-radius: var(--container-brdr-radius);
+  text-transform: capitalize;
+  display: none;
+}
+.result span {
+  font-weight: bolder;
+}
+.result span.perfect {
+  color: #2def2d;
+}
+.result span.veryGood {
+  color: #14b300;
+}
+.result span.good {
+  color: #d4940c;
+}
+.result span.bad {
+  color: red;
+}
